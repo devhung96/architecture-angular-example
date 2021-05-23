@@ -1,0 +1,12 @@
+<div class="main">
+  <p class="main-title">Product detail Id:<b>{{product?.Id}}</b></p>
+  <p class="main-sub-title">Get api detail</p>
+  <p>
+    <b>ProductName</b> : {{ product?.ProductName }}
+    <br />
+    <b>ProductContent</b> : {{ product?.ProductContent }}
+    <br />
+    <b>CreatedAt</b> : {{ product?.CreatedAt | date }}
+  </p>
+  <a [routerLink] = "['/products']" >Go to back</a>
+</div>
