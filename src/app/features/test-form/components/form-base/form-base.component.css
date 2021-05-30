@@ -1,0 +1,11 @@
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+.app-main{
+  width: 50%;
+  margin: 0 auto;
+  padding: 50px 30px;
+  border: 1px solid ;
+}
+
+.btn-reset {
+  margin-left: 10px;
+}

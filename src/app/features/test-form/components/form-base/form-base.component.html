@@ -1,0 +1,68 @@
+<form #baseForm="ngForm" (ngSubmit)="onSubmitForm(baseForm)">
+  <div class="app-main">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        required
+        class="form-control"
+        name="name"
+        [(ngModel)]="model.name"
+      />
+      <div *ngIf="submited && baseForm.controls.name?.invalid" class="alert alert-danger">
+        <div *ngIf="baseForm.controls.name?.errors?.required">Name is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="alterEgo">Address</label>
+      <input
+        type="text"
+        required
+        class="form-control"
+        name="address"
+        [(ngModel)]="model.address"
+      />
+      <div *ngIf="submited &&  baseForm.controls.address?.invalid" class="alert alert-danger">
+        <div  *ngIf=" baseForm.controls.address?.errors?.required">Address is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="power">Active</label>
+      <select class="form-control" name="isActive" [(ngModel)]="model.isActive">
+        <option value="true">Active</option>
+        <option value="false">DeActive</option>
+      </select>
+    </div>
+
+    <button type="submit" [disabled]="false" class="btn btn-success">
+      Submit
+    </button>
+    <button
+      type="button"
+      (click)="onReset(baseForm)"
+      class="btn btn-default btn-reset"
+    >
+      Reset
+    </button>
+
+    <button style="margin-left: 10px; background-color: red;"
+      type="button"
+      (click)="onCancel()"
+      class="btn btn-default btn-cancel"
+    >
+      Cancel
+    </button>
+  </div>
+  <pre>
+    {{ model | json }}
+    submited: {{ submited | json }}
+    invalid: {{ baseForm.form.invalid }}
+    errors:  {{ baseForm.form.errors | json }}
+    valid-addreess: {{ baseForm.controls.address?.invalid }}
+    valid-addreess -error-required : {{
+      baseForm.controls.address?.errors?.required
+    }}
+  </pre>
+</form>

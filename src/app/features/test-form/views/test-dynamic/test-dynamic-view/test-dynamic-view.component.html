@@ -1,0 +1,8 @@
+<button (click)="loadComponentA()" >Load component A</button>
+
+<br><br>
+<button (click)="closeComponentA()" >Load component B</button>
+<hr>
+
+<p>Content load:</p>
+<ng-template #mainContainer (clickEmitter)=" getValuesFromFilters($event)" ></ng-template>

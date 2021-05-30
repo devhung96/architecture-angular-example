@@ -9,7 +9,7 @@ const routes: Routes = [
     path: 'home-page',
     component: HomePageComponent,
   },
-  { path: '', redirectTo: 'products', pathMatch: 'full' },
+  { path: '', redirectTo: 'test-dynamic', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ]; //set up routing
 
